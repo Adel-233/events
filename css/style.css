@@ -1,0 +1,174 @@
+
+
+body {
+  background-color: darkblue;
+}
+
+main {
+  display: flex;
+}
+
+.about,
+.events {
+  margin: 10px;
+  width: 100%;
+}
+
+.about {
+  color: red;
+  /* background-color: brown; */
+  height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about header {
+  width: 80%;
+}
+
+.about::before {
+  top: 0;
+  width: 100%;
+  height: 400px;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.555);
+  display: inline-block;
+  position: absolute;
+  z-index: -1;
+}
+
+.about::after {
+  border-top: 1px solid red;
+  border-left: 1px solid red;
+  top: 10;
+  left: 10px;
+  width: 100%;
+  height: 400px;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.555);
+  display: inline-block;
+  position: absolute;
+  z-index: -2;
+  box-shadow: 11px 10px 15px 1px rgba(0, 0, 0, 0.34);
+  -webkit-box-shadow: 11px 10px 15px 1px rgba(0, 0, 0, 0.34);
+  -moz-box-shadow: 11px 10px 15px 1px rgba(0, 0, 0, 0.34);
+}
+
+.events {
+  height: 100vh;
+  /* overflow: auto; */
+  /* overflow: hidden; */
+  /* overflow: visible; */
+  /* overflow: visible; */
+  overflow: scroll;
+  padding-right: 10px;
+}
+
+.card {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+  box-shadow: 11px 10px 15px 1px rgba(0, 0, 0, 0.34);
+  -webkit-box-shadow: 11px 10px 15px 1px rgba(0, 0, 0, 0.34);
+  -moz-box-shadow: 11px 10px 15px 1px rgba(0, 0, 0, 0.34);
+}
+
+.day {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-m {
+  font-size: 50px;
+  margin: 0;
+  color: purple;
+}
+
+.month {
+  font-size: 35px;
+  margin: 0;
+}
+
+.title {
+  padding: 15px;
+  background-color: rgb(190, 190, 190);
+}
+
+.title h1 {
+  margin: 0;
+}
+
+.more {
+  text-decoration: none;
+  background-color: black;
+  padding: 5px;
+  color: whitesmoke;
+}
+
+.more:hover {
+  background-color: rgb(53, 53, 53);
+}
+
+.card:nth-child(odd) .day {
+  background-color: rgb(190, 190, 190);
+}
+
+.card:nth-child(odd) .title {
+  background-color: white;
+}
+
+/* .card:first-child .day{
+    background-color: red;
+}
+
+.card:last-child{
+    color: plum;
+} */
+
+/* .card:nth-child(3) .day{
+    background-color: brown;
+} */
+
+@media screen and (max-width: 280px) {
+  main {
+    flex-direction: column;
+  }
+
+  .about header {
+    text-align: center;
+  }
+
+  .events {
+    overflow: visible;
+    padding-right: 0;
+  }
+  .events header {
+    text-align: center;
+  }
+  .title {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 805px) {
+  main {
+    flex-direction: column;
+  }
+  .about header {
+    text-align: center;
+  }
+  .events {
+    overflow: visible;
+    padding-right: 0;
+  }
+  .title {
+    text-align: center;
+  }
+}
